@@ -41,7 +41,6 @@ export default function Home() {
     setIsSubmitting(true)
 
     try {
-      // 1. Upload images
       const imageUrls: string[] = []
       
       for (const file of files) {
@@ -65,7 +64,6 @@ export default function Home() {
         imageUrls.push(publicUrlData.publicUrl)
       }
 
-      // 2. Insert into database
       const { data: tributeData, error: dbError } = await supabase
         .from('tributes')
         .insert([
@@ -88,7 +86,6 @@ export default function Home() {
         throw dbError
       }
 
-      // 3. Redirect to tribute page
       if (tributeData && tributeData.id) {
         router.push(`/tribute/${tributeData.id}`)
       }
@@ -102,7 +99,6 @@ export default function Home() {
 
   return (
     <main className="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-      {/* Hero Banner */}
       <section className="mb-16 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-tertiary-container/30 text-on-tertiary-container font-label-md mb-6">
           <Sparkles className="w-4 h-4" />
@@ -116,9 +112,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Main Creator Form */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
-        {/* Left Decorative Column */}
         <div className="hidden lg:flex lg:col-span-4 flex-col gap-8">
           <div className="rounded-xl overflow-hidden aspect-[3/4] soft-glow-shadow">
             <img 
@@ -132,7 +126,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Form Column */}
         <div className="lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 md:p-12 border border-outline-variant soft-glow-shadow">
           <form className="space-y-8" onSubmit={handleSubmit}>
             
@@ -251,7 +244,6 @@ export default function Home() {
         </div>
       </div>
       
-      {/* Decorative Flower Footer */}
       <div className="mt-24 flex justify-center opacity-20">
         <svg className="text-tertiary" fill="none" height="60" viewBox="0 0 200 60" width="200" xmlns="http://www.w3.org/2000/svg">
           <path d="M100 30C100 30 110 10 120 30C130 50 100 50 100 50C100 50 70 50 80 30C90 10 100 30 100 30Z" stroke="currentColor" strokeWidth="1.5"></path>

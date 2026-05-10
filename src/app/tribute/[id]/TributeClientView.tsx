@@ -23,7 +23,6 @@ interface TributeClientViewProps {
 export function TributeClientView({ tribute }: TributeClientViewProps) {
   const customColor = tribute.fav_color || '#a3394a'
 
-  // Pre-defined random rotations and offsets for the scrapbook polaroids
   const scrapbookStyles = [
     { rotate: -4, marginTop: '20px', marginLeft: '-10px' },
     { rotate: 3, marginTop: '-15px', marginLeft: '15px' },
@@ -67,9 +66,7 @@ export function TributeClientView({ tribute }: TributeClientViewProps) {
 
   return (
     <main className="pt-24 pb-32 selection:bg-tertiary-container selection:text-on-tertiary-container" style={{ '--color-tertiary': customColor } as React.CSSProperties}>
-      {/* Hero Section */}
       <section className="relative min-h-[716px] flex items-center justify-center overflow-hidden px-margin-mobile">
-        {/* Floating background elements for a more alive feel */}
         {mounted && floatingElements.map((el, i) => (
           <motion.div
             key={el.id}
@@ -125,7 +122,6 @@ export function TributeClientView({ tribute }: TributeClientViewProps) {
         </motion.div>
       </section>
 
-      {/* Personal Message Section */}
       <section className="py-24 px-margin-mobile relative overflow-visible bg-surface-container-low">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
@@ -160,10 +156,8 @@ export function TributeClientView({ tribute }: TributeClientViewProps) {
         </motion.div>
       </section>
 
-      {/* Highlights Section */}
       <section className="py-24 max-w-container-max mx-auto px-margin-mobile">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-          {/* Highlight 1: Food */}
           {tribute.fav_food && (
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -187,7 +181,6 @@ export function TributeClientView({ tribute }: TributeClientViewProps) {
             </motion.div>
           )}
 
-          {/* Highlight 2: Color */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -204,7 +197,6 @@ export function TributeClientView({ tribute }: TributeClientViewProps) {
             <p className="font-body-sm text-body-sm text-on-surface-variant">Her signature shade.</p>
           </motion.div>
 
-          {/* Highlight 3: Superpower */}
           {tribute.superpower && (
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -219,7 +211,6 @@ export function TributeClientView({ tribute }: TributeClientViewProps) {
             </motion.div>
           )}
 
-          {/* Highlight 4: Place */}
           {tribute.fav_place && (
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -238,7 +229,6 @@ export function TributeClientView({ tribute }: TributeClientViewProps) {
         </div>
       </section>
 
-      {/* Image Gallery */}
       {tribute.image_urls && tribute.image_urls.length > 0 && (
         <section 
           className="py-24"
@@ -279,7 +269,6 @@ export function TributeClientView({ tribute }: TributeClientViewProps) {
                         className="w-full aspect-[4/5] object-cover bg-surface-variant" 
                       />
                     </div>
-                    {/* Decorative Tape */}
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-24 h-8 bg-white/40 backdrop-blur-sm shadow-sm rotate-[-2deg]"></div>
                   </motion.div>
                 )
@@ -289,7 +278,6 @@ export function TributeClientView({ tribute }: TributeClientViewProps) {
         </section>
       )}
 
-      {/* Action Section */}
       <section className="py-24 max-w-2xl mx-auto px-margin-mobile text-center">
         <div className="flex items-center justify-center gap-4 text-outline mb-12">
           <Heart className="w-4 h-4" />
