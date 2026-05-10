@@ -1,8 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mother's Day Tribute Web Application
+
+A full-stack web application built with Next.js (App Router), Tailwind CSS, and Supabase to create and share beautiful, personalized Mother's Day tributes.
+
+## Features
+
+- **Multi-step Form:** Collect tribute details including name, favorite color, favorite food, personal message, and images.
+- **Dynamic Tribute Pages:** Unique URLs for each tribute with a background and UI accents that dynamically adapt to the selected favorite color.
+- **Image Gallery:** Stylish Polaroid-style presentation for uploaded photos.
+- **QR Code Sharing:** Generate and share QR codes for easy access to the tribute pages.
+- **Supabase Integration:** Robust backend for storing text data and uploading images to cloud storage.
+- **Modern UI/UX:** Built with Tailwind CSS, Framer Motion for smooth animations, and a responsive design.
+
+## Tech Stack
+
+- **Frontend:** Next.js 14 (App Router), React, Tailwind CSS, Framer Motion, Lucide React
+- **Backend:** Supabase (Database & Storage)
+- **Styling:** Tailwind CSS, Glassmorphism effects
+- **Typography:** Geist (Default Next.js font), Playfair Display (for messages)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (v18 or higher)
+- A [Supabase](https://supabase.com/) account and project.
+
+### Environment Variables
+
+Create a `.env.local` file in the root directory and add the following variables from your Supabase project:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-project-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+```
+
+### Database Setup
+
+1. Create a `tributes` table in your Supabase project with the following schema:
+   - `id` (uuid, primary key)
+   - `created_at` (timestamp with time zone)
+   - `mom_name` (text)
+   - `fav_color` (text)
+   - `fav_food` (text)
+   - `message` (text)
+   - `image_urls` (text array)
+2. Create a public storage bucket named `mom-images` for storing the uploaded photos. Ensure public access is enabled.
+
+### Installation
+
+1. Clone the repository and install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+2. Run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +66,11 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project can be easily deployed on [Vercel](https://vercel.com/) or any other Next.js compatible hosting platform. Remember to set the environment variables (`NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`) in your hosting provider's dashboard.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
