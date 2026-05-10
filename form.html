@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#eae8e4",
+                    "tertiary": "#a3394a",
+                    "surface-container": "#efeeea",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#d4c2c2",
+                    "on-secondary-container": "#686344",
+                    "tertiary-fixed-dim": "#ffb2b8",
+                    "secondary": "#635f40",
+                    "on-secondary-fixed-variant": "#4b472b",
+                    "secondary-fixed-dim": "#cec7a2",
+                    "outline": "#827473",
+                    "secondary-fixed": "#eae3bc",
+                    "on-tertiary-container": "#9a3243",
+                    "primary": "#7b5455",
+                    "on-surface-variant": "#504444",
+                    "on-surface": "#1b1c1a",
+                    "secondary-container": "#e8e0ba",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdad9",
+                    "tertiary-fixed": "#ffdadb",
+                    "on-secondary-fixed": "#1f1c04",
+                    "on-primary-fixed-variant": "#613d3e",
+                    "tertiary-container": "#ffbdc2",
+                    "inverse-surface": "#30312e",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e4e2de",
+                    "surface-container-low": "#f5f3ef",
+                    "on-tertiary-fixed": "#40000f",
+                    "on-tertiary-fixed-variant": "#842134",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1b1c1a",
+                    "error": "#ba1a1a",
+                    "background": "#fbf9f5",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#734e4e",
+                    "surface-tint": "#7b5455",
+                    "surface-dim": "#dbdad6",
+                    "inverse-on-surface": "#f2f0ed",
+                    "surface-bright": "#fbf9f5",
+                    "primary-fixed-dim": "#ecbaba",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#ecbaba",
+                    "surface-container-highest": "#e4e2de",
+                    "surface": "#fbf9f5",
+                    "on-primary-fixed": "#2f1314",
+                    "primary-container": "#f4c2c2",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "48px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "label-lg": ["Montserrat"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-sm": ["Montserrat"],
+                    "body-lg": ["Montserrat"],
+                    "body-md": ["Montserrat"],
+                    "body-sm": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-glow-shadow {
+            box-shadow: 0 16px 40px -12px rgba(163, 57, 74, 0.08);
+        }
+        .glass-panel {
+            background: rgba(251, 249, 245, 0.7);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md">
+<!-- Top Navigation -->
+<header class="bg-surface shadow-sm fixed top-0 left-0 w-full z-50">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-20">
+<div class="font-headline-sm text-headline-sm text-tertiary">Mother's Day Tribute</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-lg text-label-lg text-tertiary border-b-2 border-tertiary pb-1 transition-colors duration-300" href="#">Create</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-tertiary-fixed-dim transition-colors duration-300" href="#">Tribute</a>
+<div class="flex gap-4 ml-4">
+<button class="scale-95 active:scale-90 transition-transform text-primary">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="scale-95 active:scale-90 transition-transform text-primary">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-[1200px] mx-auto">
+<!-- Hero Section -->
+<section class="mb-16 text-center">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-tertiary mb-4">Create Your Tribute</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Transform your cherished memories into a beautiful digital keepsake for the woman who means the world to you.
+            </p>
+</section>
+<!-- Main Creator Form -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Decorative Column (Hidden on mobile) -->
+<div class="hidden lg:flex lg:col-span-4 flex-col gap-8">
+<div class="rounded-xl overflow-hidden aspect-[3/4] soft-glow-shadow">
+<img class="w-full h-full object-cover" data-alt="An artistic, high-end photography of a delicate bouquet of pink peonies and soft greenery arranged in a vintage ceramic vase. The scene is lit with warm, golden-hour sunlight creating a soft, nostalgic atmosphere that complements a maternal elegance theme with shades of cream, blush pink, and sage green." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUM9cFpjOx8i4j9Ap0gEbqlz11kZmYd1MD_tDNpcv5bljXHKpCY544hVsID2zoy6xFvyUM3Kz-nGvCoReOIDfW0munXy50P6x9VpF3celwR3T4HSPGHOmGF9oYNEYskmTQPNp8uhKZkP8oKFZXhVUV-nUFEgJP5C0vzzi0nlIghFiFAU0DtsteG2HVCFh1Xc228jEuJCYus37FP-zsj37EtXXNxzmFXeVbzXzmCItYGTwNWyZ2Zy-0ZMUafukYAAOBSpoaKTrLXw"/>
+</div>
+<div class="p-8 rounded-xl border border-outline-variant bg-surface-container-low italic text-primary font-headline-sm">
+                    "A mother's love is the fuel that enables a normal human being to do the impossible."
+                </div>
+</div>
+<!-- Form Column -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 md:p-12 border border-outline-variant soft-glow-shadow">
+<form class="space-y-8">
+<!-- Basic Info Group -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Mom's Name</label>
+<input class="w-full bg-surface-container border-0 focus:ring-2 focus:ring-secondary rounded-lg px-4 py-3 font-body-md text-on-surface placeholder:text-outline/50" placeholder="Enter her full name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Favorite Color</label>
+<div class="flex items-center gap-3 w-full bg-surface-container border-0 rounded-lg px-4 py-1.5 h-[52px]">
+<input class="w-8 h-8 rounded-full border-0 cursor-pointer overflow-hidden bg-transparent" type="color" value="#ffbdc2"/>
+<span class="text-body-sm text-outline">Select her signature shade</span>
+</div>
+</div>
+</div>
+<!-- Food Field -->
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Favorite Food</label>
+<input class="w-full bg-surface-container border-0 focus:ring-2 focus:ring-secondary rounded-lg px-4 py-3 font-body-md text-on-surface" placeholder="Something she loves to cook or eat" type="text"/>
+</div><div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Our Favorite Place</label>
+<input class="w-full bg-surface-container border-0 focus:ring-2 focus:ring-secondary rounded-lg px-4 py-3 font-body-md text-on-surface placeholder:text-outline/50" placeholder="Where do you share your best memories?" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Your Superpower</label>
+<input class="w-full bg-surface-container border-0 focus:ring-2 focus:ring-secondary rounded-lg px-4 py-3 font-body-md text-on-surface placeholder:text-outline/50" placeholder="What is her secret strength?" type="text"/>
+</div>
+<!-- Message Area -->
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Personal Message</label>
+<textarea class="w-full bg-surface-container border-0 focus:ring-2 focus:ring-secondary rounded-lg px-4 py-3 font-body-md text-on-surface resize-none" placeholder="Write a heartfelt note for her..." rows="5"></textarea>
+</div>
+<!-- File Upload Section -->
+<div class="space-y-4">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Upload 3-4 Photos of Mom</label>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-8 text-center bg-background/50 hover:bg-surface-container-low transition-colors duration-300">
+<span class="material-symbols-outlined text-4xl text-primary mb-2">add_photo_alternate</span>
+<p class="font-label-lg text-primary mb-1">Drag and drop your favorites here</p>
+<p class="font-body-sm text-outline">Maximum size 10MB per image</p>
+<button class="mt-4 px-6 py-2 bg-secondary text-white font-label-lg rounded-full hover:bg-on-secondary-fixed-variant transition-all" type="button">Select Files</button>
+</div>
+<!-- Preview Grid (Placeholder) -->
+<div class="grid grid-cols-4 gap-4 mt-4">
+<div class="aspect-square bg-surface-container rounded-lg border border-outline-variant/30 flex items-center justify-center text-outline-variant">
+<span class="material-symbols-outlined">image</span>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg border border-outline-variant/30 flex items-center justify-center text-outline-variant">
+<span class="material-symbols-outlined">image</span>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg border border-outline-variant/30 flex items-center justify-center text-outline-variant">
+<span class="material-symbols-outlined">image</span>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg border border-outline-variant/30 flex items-center justify-center text-outline-variant">
+<span class="material-symbols-outlined">image</span>
+</div>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-8">
+<button class="w-full py-5 bg-tertiary text-on-tertiary font-headline-sm rounded-xl soft-glow-shadow hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3" type="button">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                            Generate Tribute
+                        </button>
+<p class="text-center mt-4 text-body-sm text-outline">You'll be able to preview and edit your tribute in the next step.</p>
+</div>
+</form>
+</div>
+</div>
+<!-- Decorative Flower Footer (SVG) -->
+<div class="mt-24 flex justify-center opacity-20">
+<svg class="text-tertiary" fill="none" height="60" viewbox="0 0 200 60" width="200" xmlns="http://www.w3.org/2000/svg">
+<path d="M100 30C100 30 110 10 120 30C130 50 100 50 100 50C100 50 70 50 80 30C90 10 100 30 100 30Z" stroke="currentColor" stroke-width="1.5"></path>
+<path d="M100 30C100 30 120 20 125 35C130 50 110 55 100 50M100 30C100 30 80 20 75 35C70 50 90 55 100 50" stroke="currentColor" stroke-width="1"></path>
+<line stroke="currentColor" stroke-dasharray="4 4" stroke-width="0.5" x1="10" x2="70" y1="30" y2="30"></line>
+<line stroke="currentColor" stroke-dasharray="4 4" stroke-width="0.5" x1="130" x2="190" y1="30" y2="30"></line>
+</svg>
+</div>
+</main>
+<!-- Mobile Navigation -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-4 px-margin-mobile bg-surface-container-low shadow-[0_-4px_16px_rgba(163,57,74,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-tertiary-container text-on-tertiary-container rounded-full px-6 py-2" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="font-label-lg text-label-lg">Creator</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline px-6 py-2" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-lg text-label-lg">Tribute</span>
+</a>
+</nav>
+</body></html>
