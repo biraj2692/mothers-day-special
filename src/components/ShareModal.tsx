@@ -68,13 +68,10 @@ export function ShareModal({ tributeUrl, momName }: ShareModalProps) {
                   <QRCodeSVG 
                     value={fullUrl} 
                     size={160}
-                    fgColor="#a3394a" // tertiary color
-                    level="Q"
+                    fgColor="#000000" // Use black for maximum scannability contrast
+                    level="H" // Highest error correction
+                    marginSize={2}
                   />
-                  {/* Overlay a heart in the center of QR code */}
-                  <div className="absolute bg-white p-1 rounded-lg">
-                    <Heart className="w-6 h-6 text-tertiary fill-tertiary" />
-                  </div>
                 </div>
               </div>
               
